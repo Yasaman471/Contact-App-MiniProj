@@ -1,6 +1,6 @@
 import ContactItem from "./ContactItem";
 
-const ContactsList = ({Contacts}) =>{
+const ContactsList = ({Contacts,deleteHandler}) =>{
     
     return(
         <div>
@@ -9,7 +9,11 @@ const ContactsList = ({Contacts}) =>{
           Contacts.length ? (
             <ul>
             {Contacts.map((contact)=>(
-              <ContactItem key={contact.id} data={contact} />
+              <ContactItem
+              key={contact.id}
+              data={contact}
+              deleteHandler={deleteHandler}
+              />
             ))}
           </ul>
           ) : <p>No Contacts Yet!</p>
